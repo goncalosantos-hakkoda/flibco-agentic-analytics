@@ -69,21 +69,24 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_routes')
-              field: route_id
+              arguments:
+                to: ref('dim_routes')
+                field: route_id
       - name: vehicle_id
         description: Foreign key to dim_vehicles
         tests:
           - relationships:
-              to: ref('dim_vehicles')
-              field: vehicle_id
+              arguments:
+                to: ref('dim_vehicles')
+                field: vehicle_id
       - name: date_key
         description: Foreign key to dim_date (trip departure date)
         tests:
           - not_null
           - relationships:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
       - name: occupancy_rate
         description: >
           Ratio of passengers to vehicle capacity (0.0 to 1.0).
@@ -104,8 +107,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_routes')
-              field: route_id
+              arguments:
+                to: ref('dim_routes')
+                field: route_id
       - name: date_key
         description: Foreign key to dim_date (booking date)
         tests:
