@@ -1,0 +1,94 @@
+version: 2
+
+models:
+  - name: stg_routes
+    description: Cleaned route master data
+    columns:
+      - name: route_id
+        description: Unique route identifier
+        tests:
+          - unique
+          - not_null
+      - name: route_name
+        description: Human-readable route name
+      - name: origin
+        description: Departure city
+      - name: destination
+        description: Arrival location (typically an airport)
+      - name: distance_km
+        description: Route distance in kilometers
+      - name: vehicle_type
+        description: Type of vehicle used (shuttle_bus or minivan)
+      - name: base_fare_eur
+        description: Base fare in EUR
+      - name: frequency_daily
+        description: Nominal daily trip frequency
+
+  - name: stg_vehicles
+    description: Cleaned vehicle fleet data
+    columns:
+      - name: vehicle_id
+        description: Unique vehicle identifier
+        tests:
+          - unique
+          - not_null
+      - name: vehicle_type
+        description: Vehicle category (shuttle_bus or minivan)
+      - name: capacity
+        description: Maximum passenger capacity
+      - name: status
+        description: Current operational status
+
+  - name: stg_trips
+    description: Cleaned trip records with standardized timestamps
+    columns:
+      - name: trip_id
+        description: Unique trip identifier
+        tests:
+          - unique
+          - not_null
+      - name: route_id
+        description: Foreign key to routes
+        tests:
+          - not_null
+      - name: vehicle_id
+        description: Foreign key to vehicles
+      - name: departure_at
+        description: Departure timestamp
+      - name: arrival_at
+        description: Arrival timestamp
+      - name: vehicle_capacity
+        description: Vehicle capacity for this trip
+      - name: passengers_onboard
+        description: Actual passengers on this trip
+      - name: trip_status
+        description: Trip completion status (completed, cancelled)
+
+  - name: stg_bookings
+    description: Cleaned booking records with standardized timestamps
+    columns:
+      - name: booking_id
+        description: Unique booking identifier
+        tests:
+          - unique
+          - not_null
+      - name: trip_id
+        description: Foreign key to trips
+      - name: route_id
+        description: Foreign key to routes
+        tests:
+          - not_null
+      - name: booked_at
+        description: Booking creation timestamp
+      - name: passengers
+        description: Number of passengers in booking
+      - name: fare_per_passenger
+        description: Fare charged per passenger in EUR
+      - name: total_fare
+        description: Total booking fare in EUR
+      - name: payment_method
+        description: Payment method used
+      - name: booking_status
+        description: Booking status (completed, cancelled, no_show, refunded)
+      - name: channel
+        description: Booking channel (website, mobile_app, partner_api)

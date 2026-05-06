@@ -1,0 +1,10 @@
+target/
+dbt_packages/
+logs/
+package-lock.yml
+.env
+*.pyc
+__pycache__/
+.venv/
+.user.yml
+plans/

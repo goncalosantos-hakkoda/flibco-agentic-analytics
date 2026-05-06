@@ -1,0 +1,117 @@
+version: 2
+
+models:
+  - name: dim_routes
+    description: Route dimension - master data for all shuttle/taxi routes
+    columns:
+      - name: route_id
+        description: Unique route identifier
+        tests:
+          - unique
+          - not_null
+      - name: route_name
+        description: Human-readable route name (e.g., "London - Stansted")
+      - name: origin
+        description: Departure city
+      - name: destination
+        description: Arrival location (typically an airport)
+      - name: distance_km
+        description: Route distance in kilometers
+      - name: vehicle_type
+        description: Default vehicle type for this route
+      - name: base_fare_eur
+        description: Standard fare in EUR
+      - name: frequency_daily
+        description: Nominal number of daily departures
+
+  - name: dim_vehicles
+    description: Vehicle dimension - fleet master data
+    columns:
+      - name: vehicle_id
+        description: Unique vehicle identifier
+        tests:
+          - unique
+          - not_null
+      - name: vehicle_type
+        description: Vehicle category (shuttle_bus or minivan)
+      - name: capacity
+        description: Maximum passenger capacity
+      - name: status
+        description: Operational status (active, maintenance, retired)
+
+  - name: dim_date
+    description: Date dimension with fiscal and seasonal attributes
+    columns:
+      - name: date_key
+        description: Date used as join key (DATE type)
+        tests:
+          - unique
+          - not_null
+      - name: quarter
+        description: Calendar quarter (1-4)
+      - name: season
+        description: Season name (Winter, Spring, Summer, Autumn)
+      - name: is_weekday
+        description: Whether the date is a weekday
+
+  - name: fct_trips
+    description: >
+      Fact table for completed trips. Grain is one row per trip.
+      Contains occupancy metrics and foreign keys to dim_routes, dim_vehicles, dim_date.
+    columns:
+      - name: trip_id
+        description: Unique trip identifier
+        tests:
+          - unique
+          - not_null
+      - name: route_id
+        description: Foreign key to dim_routes
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_routes')
+              field: route_id
+      - name: vehicle_id
+        description: Foreign key to dim_vehicles
+        tests:
+          - relationships:
+              to: ref('dim_vehicles')
+              field: vehicle_id
+      - name: date_key
+        description: Foreign key to dim_date (trip departure date)
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: occupancy_rate
+        description: >
+          Ratio of passengers to vehicle capacity (0.0 to 1.0).
+          Calculated as passengers_onboard / vehicle_capacity.
+
+  - name: fct_revenue
+    description: >
+      Fact table for booking revenue. Grain is one row per booking.
+      Contains fare amounts and foreign keys to dim_routes and dim_date.
+    columns:
+      - name: booking_id
+        description: Unique booking identifier
+        tests:
+          - unique
+          - not_null
+      - name: route_id
+        description: Foreign key to dim_routes
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_routes')
+              field: route_id
+      - name: date_key
+        description: Foreign key to dim_date (booking date)
+        tests:
+          - not_null
+      - name: total_fare
+        description: Total fare amount in EUR for this booking
+      - name: booking_status
+        description: >
+          Status of the booking: completed, cancelled, no_show, refunded

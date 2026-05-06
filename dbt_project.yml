@@ -1,0 +1,35 @@
+name: flibco_analytics
+version: '1.0.0'
+config-version: 2
+
+profile: flibco_analytics
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  flibco_analytics:
+    +schema: RAW
+
+models:
+  flibco_analytics:
+    staging:
+      +materialized: view
+      +schema: STAGING
+    intermediate:
+      +materialized: view
+      +schema: INTERMEDIATE
+    marts:
+      +materialized: table
+      +schema: MARTS
+    semantic:
+      +materialized: semantic_view
+      +schema: SEMANTIC

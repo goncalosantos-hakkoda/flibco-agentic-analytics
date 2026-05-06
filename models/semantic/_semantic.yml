@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: flibco_operations_sv
+    description: >
+      Native Snowflake Semantic View for Flibco shuttle operations analytics.
+      Built on top of the gold mart layer (fct_trips, fct_revenue, dim_routes, dim_date, dim_vehicles).
+      This is the governed business context used by Cortex Analyst and Snowflake Intelligence agents.
+    config:
+      materialized: semantic_view
+    meta:
+      semantic_view: true
+      verified_questions:
+        - "What is the average occupancy rate by route and month?"
+        - "What was total revenue by route by quarter?"
+        - "Which routes had the strongest revenue growth between Q1 and Q2 2025?"
+        - "Which routes had the strongest occupancy growth between Q1 and Q2 2025?"
+        - "Which vehicle type has the highest average occupancy?"
+        - "Show revenue per passenger by route."
+        - "Which routes are underperforming with low occupancy but high capacity?"
+        - "Compare Brussels to Charleroi versus London to Stansted revenue in Q2 2025."
+      logical_tables:
+        trips: MARTS.FCT_TRIPS
+        revenue: MARTS.FCT_REVENUE
+        routes: MARTS.DIM_ROUTES
+        dates: MARTS.DIM_DATE
+        vehicles: MARTS.DIM_VEHICLES
+      relationships:
+        - "fct_trips.route_id -> dim_routes.route_id"
+        - "fct_trips.date_key -> dim_date.date_key"
+        - "fct_trips.vehicle_id -> dim_vehicles.vehicle_id"
+        - "fct_revenue.route_id -> dim_routes.route_id"
+        - "fct_revenue.date_key -> dim_date.date_key"
+      metrics:
+        total_revenue: "SUM(fct_revenue.total_fare)"
+        completed_revenue: "SUM(fct_revenue.total_fare) WHERE booking_status = 'completed'"
+        total_passengers: "SUM(fct_trips.passengers_onboard)"
+        average_occupancy_rate: "AVG(fct_trips.occupancy_rate)"
+        trip_count: "COUNT(fct_trips.trip_id)"
+        booking_count: "COUNT(fct_revenue.booking_id)"
+        revenue_per_passenger: "total_revenue / total_passengers"
+        revenue_growth_pct: "Period-over-period revenue growth percentage"
+        occupancy_growth_pct: "Period-over-period occupancy growth percentage"
+      synonyms:
+        revenue: ["sales", "income", "turnover"]
+        route: ["line", "shuttle route", "journey"]
+        passengers: ["riders", "customers", "travelers"]
+        occupancy: ["load factor", "utilization", "fill rate"]
+        vehicle: ["bus", "shuttle", "minivan"]
+        quarter: ["Q1", "Q2", "Q3", "quarterly"]

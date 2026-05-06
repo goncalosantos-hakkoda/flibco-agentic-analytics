@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: int_trip_occupancy
+    description: >
+      Trip-level occupancy metrics. Joins trips with routes and computes
+      occupancy_rate as passengers_onboard / vehicle_capacity.
+      Only includes completed trips.
+    columns:
+      - name: trip_id
+        description: Unique trip identifier
+        tests:
+          - unique
+          - not_null
+      - name: occupancy_rate
+        description: Ratio of passengers to vehicle capacity (0.0 to 1.0)
+
+  - name: int_booking_revenue
+    description: >
+      Booking-level revenue data enriched with route information.
+      Includes all booking statuses for full revenue lifecycle tracking.
+    columns:
+      - name: booking_id
+        description: Unique booking identifier
+        tests:
+          - unique
+          - not_null
+      - name: total_fare
+        description: Total fare amount in EUR for this booking

@@ -1,0 +1,14 @@
+[project]
+name = "flibco-agentic-analytics"
+version = "1.0.0"
+description = "Flibco shuttle operations analytics - dbt on Snowflake with semantic views"
+requires-python = ">=3.11"
+dependencies = [
+    "dbt-snowflake>=1.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "sqlfluff>=3.0",
+    "sqlfluff-templater-dbt>=3.0",
+]

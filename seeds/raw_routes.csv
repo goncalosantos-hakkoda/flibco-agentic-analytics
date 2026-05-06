@@ -1,0 +1,11 @@
+route_id,route_name,origin,destination,distance_km,vehicle_type,base_fare_eur,frequency_daily
+RT001,London - Stansted,London,Stansted Airport,63,shuttle_bus,12.00,8
+RT002,Brussels - Charleroi,Brussels,Charleroi Airport,60,shuttle_bus,14.99,6
+RT003,Luxembourg - Frankfurt Hahn,Luxembourg City,Frankfurt Hahn Airport,120,shuttle_bus,17.00,4
+RT004,Paris - Beauvais,Paris,Beauvais Airport,85,shuttle_bus,15.90,5
+RT005,Dusseldorf - Weeze,Dusseldorf,Weeze Airport,75,minivan,29.00,3
+RT006,Maastricht - Eindhoven,Maastricht,Eindhoven Airport,88,shuttle_bus,10.00,4
+RT007,Metz - Luxembourg,Metz,Luxembourg Airport,62,minivan,25.00,3
+RT008,Antwerp - Brussels Airport,Antwerp,Brussels Airport,45,shuttle_bus,11.00,6
+RT009,Liege - Charleroi,Liege,Charleroi Airport,95,shuttle_bus,13.50,3
+RT010,Cologne - Dusseldorf Airport,Cologne,Dusseldorf Airport,40,minivan,22.00,4
