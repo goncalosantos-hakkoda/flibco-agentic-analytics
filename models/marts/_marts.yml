@@ -119,3 +119,78 @@ models:
       - name: booking_status
         description: >
           Status of the booking: completed, cancelled, no_show, refunded
+
+  - name: fct_punctuality
+    description: >
+      Fact table for trip punctuality analysis. Grain: one row per trip.
+      Contains delay metrics, severity classifications, SLA breach detection,
+      route percentile context, and estimated cost-of-delay.
+      Bridges to dim_routes, dim_vehicles, dim_date (shared with fct_trips/fct_revenue).
+    columns:
+      - name: trip_id
+        description: Unique trip identifier
+        tests:
+          - unique
+          - not_null
+      - name: route_id
+        description: Foreign key to dim_routes
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_routes')
+                field: route_id
+      - name: vehicle_id
+        description: Foreign key to dim_vehicles
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_vehicles')
+                field: vehicle_id
+      - name: date_key
+        description: Foreign key to dim_date (trip date)
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: departure_delay_minutes
+        description: Departure delay in minutes (positive = late)
+      - name: arrival_delay_minutes
+        description: Arrival delay in minutes (positive = late)
+      - name: is_on_time
+        description: Whether trip met 5-minute OTP threshold for both departure and arrival
+      - name: delay_severity
+        description: Severity classification (on_time, minor, moderate, major, severe)
+      - name: delay_risk_score
+        description: Compound risk score (0-100) considering multiple factors
+      - name: is_sla_breach
+        description: Whether the delay exceeded the category SLA threshold
+      - name: estimated_delay_cost_eur
+        description: Estimated financial impact in EUR
+
+  - name: dim_delay_categories
+    description: >
+      Dimension table for delay category hierarchy and operational metadata.
+      Contains SLA thresholds, controllability classification, mitigation
+      strategies, and cascading risk factors.
+    columns:
+      - name: delay_category_key
+        description: Surrogate key (MD5 hash of delay_category)
+        tests:
+          - unique
+          - not_null
+      - name: delay_category
+        description: Delay category name
+        tests:
+          - unique
+          - not_null
+      - name: delay_domain
+        description: Operational domain grouping
+      - name: controllability
+        description: Whether Flibco can control this type (fully, partially, uncontrollable)
+      - name: sla_threshold_minutes
+        description: Maximum acceptable delay before SLA breach
+      - name: cascade_risk_factor
+        description: Probability (0-1) of causing downstream delays

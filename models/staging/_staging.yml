@@ -92,3 +92,75 @@ models:
         description: Booking status (completed, cancelled, no_show, refunded)
       - name: channel
         description: Booking channel (website, mobile_app, partner_api)
+
+  - name: stg_scheduled_trips
+    description: >
+      Staged scheduled trip data with derived temporal metadata.
+      Includes departure window classification, schedule density,
+      weekend flags, and temporal validation.
+    columns:
+      - name: scheduled_trip_id
+        description: Unique schedule record identifier
+        tests:
+          - unique
+          - not_null
+      - name: trip_id
+        description: Foreign key to trips (1:1 relationship)
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_trips')
+                field: trip_id
+      - name: route_id
+        description: Foreign key to routes
+      - name: vehicle_id
+        description: Foreign key to vehicles
+      - name: scheduled_departure_at
+        description: Planned departure timestamp
+      - name: scheduled_arrival_at
+        description: Planned arrival timestamp
+      - name: scheduled_duration_minutes
+        description: Derived planned travel duration in minutes
+      - name: service_type
+        description: Service classification (regular, express, peak_hour)
+      - name: departure_window
+        description: Time-of-day classification (early_morning through night)
+      - name: is_weekend_service
+        description: Whether scheduled on a weekend
+      - name: schedule_density
+        description: Schedule congestion level (high, medium, low)
+
+  - name: stg_delay_incidents
+    description: >
+      Staged delay incident records with derived severity metrics.
+      Includes computed severity based on delay + passenger impact,
+      passenger-delay-minutes composite metric, domain classification,
+      and data quality validation flags.
+    columns:
+      - name: incident_id
+        description: Unique incident identifier
+        tests:
+          - unique
+          - not_null
+      - name: trip_id
+        description: Foreign key to trips
+        tests:
+          - not_null
+      - name: delay_category
+        description: Category of delay (traffic_congestion, weather_conditions, etc.)
+      - name: delay_domain
+        description: High-level operational domain (infrastructure, environmental, fleet, passenger_ops, internal_ops)
+      - name: delay_minutes
+        description: Duration of delay in minutes
+      - name: computed_severity
+        description: Recalculated severity considering both delay duration and passenger impact
+      - name: passenger_delay_minutes
+        description: Composite metric (delay_minutes * affected_passengers)
+      - name: resolution_minutes
+        description: Time to resolve incident in minutes
+      - name: resolution_category
+        description: Resolution speed tier (rapid, standard, prolonged)
+      - name: incident_time_band
+        description: Time band when incident occurred (morning_rush, midday, evening_rush, off_peak)

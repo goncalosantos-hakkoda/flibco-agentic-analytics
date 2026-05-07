@@ -48,3 +48,53 @@ models:
           occupancy: ["load factor", "utilization", "fill rate"]
           vehicle: ["bus", "shuttle", "minivan"]
           quarter: ["Q1", "Q2", "Q3", "quarterly"]
+
+  - name: flibco_punctuality_sv
+    description: >
+      Native Snowflake Semantic View for Flibco on-time performance analytics.
+      Built on fct_punctuality and dim_delay_categories, sharing dim_routes, dim_date,
+      and dim_vehicles with the operations semantic view for cross-domain analysis.
+      Covers delay metrics, SLA compliance, cascading delays, and cost-of-delay estimates.
+    config:
+      materialized: semantic_view
+      meta:
+        semantic_view: true
+        verified_questions:
+          - "What is the on-time performance rate by route?"
+          - "Which routes have the highest average departure delay?"
+          - "What are the most common delay categories?"
+          - "Show the SLA breach rate by month and route."
+          - "Which vehicle type has better punctuality?"
+          - "What is the total estimated delay cost by quarter?"
+          - "How does weekend on-time performance compare to weekdays?"
+          - "Which routes have the most cascading delays?"
+          - "Show delay severity distribution by route."
+          - "What is the average delay risk score by time of day?"
+        logical_tables:
+          punctuality: MARTS.FCT_PUNCTUALITY
+          delay_categories: MARTS.DIM_DELAY_CATEGORIES
+          routes: MARTS.DIM_ROUTES
+          dates: MARTS.DIM_DATE
+          vehicles: MARTS.DIM_VEHICLES
+        relationships:
+          - "fct_punctuality.route_id -> dim_routes.route_id"
+          - "fct_punctuality.date_key -> dim_date.date_key"
+          - "fct_punctuality.vehicle_id -> dim_vehicles.vehicle_id"
+          - "fct_punctuality.delay_category_key -> dim_delay_categories.delay_category_key"
+        metrics:
+          on_time_rate: "AVG(CASE WHEN is_on_time THEN 1.0 ELSE 0.0 END)"
+          avg_departure_delay: "AVG(fct_punctuality.departure_delay_minutes)"
+          avg_arrival_delay: "AVG(fct_punctuality.arrival_delay_minutes)"
+          total_delay_cost: "SUM(fct_punctuality.estimated_delay_cost_eur)"
+          sla_breach_rate: "AVG(CASE WHEN is_sla_breach THEN 1.0 ELSE 0.0 END)"
+          severe_delay_rate: "AVG(CASE WHEN delay_severity IN ('major_delay','severe_delay') THEN 1.0 ELSE 0.0 END)"
+          cascade_rate: "AVG(CASE WHEN has_cascading_incident THEN 1.0 ELSE 0.0 END)"
+          delayed_trip_count: "COUNT(CASE WHEN NOT is_on_time THEN trip_id END)"
+          avg_delay_risk_score: "AVG(fct_punctuality.delay_risk_score)"
+          total_passenger_delay_impact: "SUM(fct_punctuality.total_passenger_delay_minutes)"
+        synonyms:
+          punctuality: ["on-time", "OTP", "timeliness", "delays"]
+          delay: ["late", "behind schedule", "tardy"]
+          SLA: ["service level", "threshold", "target"]
+          cascade: ["propagation", "knock-on", "domino effect"]
+          severity: ["how late", "impact level", "delay tier"]

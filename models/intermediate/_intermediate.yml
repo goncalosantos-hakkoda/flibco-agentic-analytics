@@ -27,3 +27,30 @@ models:
           - not_null
       - name: total_fare
         description: Total fare amount in EUR for this booking
+
+  - name: int_trip_punctuality
+    description: >
+      Trip-level punctuality analysis joining scheduled vs actual trip data.
+      Computes departure/arrival delays, OTP classification, severity tiers,
+      rolling vehicle reliability, cascading delay detection, and compound
+      delay risk scores using window functions.
+    columns:
+      - name: trip_id
+        description: Unique trip identifier
+        tests:
+          - unique
+          - not_null
+      - name: departure_delay_minutes
+        description: Minutes between scheduled and actual departure (positive = late)
+      - name: arrival_delay_minutes
+        description: Minutes between scheduled and actual arrival (positive = late)
+      - name: is_on_time
+        description: Whether both departure and arrival were within 5-min threshold
+      - name: delay_severity
+        description: Severity tier (on_time, minor_delay, moderate_delay, major_delay, severe_delay)
+      - name: delay_risk_score
+        description: Compound risk score 0-100 combining multiple delay indicators
+      - name: vehicle_rolling_avg_delay_5trips
+        description: Rolling 5-trip average delay for vehicle reliability tracking
+      - name: is_probable_cascade
+        description: Whether this delay was likely caused by a prior trip on the same vehicle
