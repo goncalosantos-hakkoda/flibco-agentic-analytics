@@ -8,3 +8,10 @@ __pycache__/
 .venv/
 .user.yml
 plans/
+
+# graphify (cache and intermediate files)
+graphify-out/.graphify_*
+graphify-out/.needs_update
+graphify-out/cost.json
+graphify-out/cache/
+graphify-out/manifest.json

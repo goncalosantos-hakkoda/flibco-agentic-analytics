@@ -1,0 +1,953 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "semantic_view_architecture_stack",
+        "label": "Semantic View Architecture Stack",
+        "nodes": [
+          "readme_flibco_operations_sv",
+          "dbt_semantic_view_readme_package",
+          "dbt_semantic_view_readme_materialization",
+          "plan_2026_05_06_1408_semantic_over_yaml",
+          "semantic_view_guidelines_when_to_split"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "README.md"
+      },
+      {
+        "id": "medallion_data_pipeline",
+        "label": "Medallion Architecture Data Pipeline",
+        "nodes": [
+          "readme_medallion_architecture",
+          "readme_star_schema_design",
+          "dbt_in_snowflake_generate_schema_name",
+          "dbt_utils_readme_date_spine"
+        ],
+        "relation": "implement",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "README.md"
+      },
+      {
+        "id": "dbt_utils_adr_decisions",
+        "label": "dbt_utils Architecture Decision Records",
+        "nodes": [
+          "adr_0000_documenting_architecture_decisions",
+          "adr_0001_decision_record_format",
+          "adr_0002_cross_database_utils"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "apply_license_headers.py",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L1",
+      "id": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "community": 1,
+      "norm_label": "apply_license_headers.py"
+    },
+    {
+      "label": "format_comment_block_for_hash()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L46",
+      "id": "scripts_apply_license_headers_format_comment_block_for_hash",
+      "community": 1,
+      "norm_label": "format_comment_block_for_hash()"
+    },
+    {
+      "label": "format_comment_block_for_sql()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L52",
+      "id": "scripts_apply_license_headers_format_comment_block_for_sql",
+      "community": 1,
+      "norm_label": "format_comment_block_for_sql()"
+    },
+    {
+      "label": "format_comment_block_for_html()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L58",
+      "id": "scripts_apply_license_headers_format_comment_block_for_html",
+      "community": 1,
+      "norm_label": "format_comment_block_for_html()"
+    },
+    {
+      "label": "has_header()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L62",
+      "id": "scripts_apply_license_headers_has_header",
+      "community": 3,
+      "norm_label": "has_header()"
+    },
+    {
+      "label": "insert_after_shebang_and_encoding()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L68",
+      "id": "scripts_apply_license_headers_insert_after_shebang_and_encoding",
+      "community": 3,
+      "norm_label": "insert_after_shebang_and_encoding()"
+    },
+    {
+      "label": "insert_after_doctype()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L78",
+      "id": "scripts_apply_license_headers_insert_after_doctype",
+      "community": 3,
+      "norm_label": "insert_after_doctype()"
+    },
+    {
+      "label": "prepare_header_for_ext()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L86",
+      "id": "scripts_apply_license_headers_prepare_header_for_ext",
+      "community": 1,
+      "norm_label": "prepare_header_for_ext()"
+    },
+    {
+      "label": "apply_header_to_file()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L96",
+      "id": "scripts_apply_license_headers_apply_header_to_file",
+      "community": 3,
+      "norm_label": "apply_header_to_file()"
+    },
+    {
+      "label": "should_skip_path()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L127",
+      "id": "scripts_apply_license_headers_should_skip_path",
+      "community": 7,
+      "norm_label": "should_skip_path()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L134",
+      "id": "scripts_apply_license_headers_main",
+      "community": 7,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Flibco Agentic Analytics Project",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_flibco_agentic_analytics",
+      "community": 4,
+      "norm_label": "flibco agentic analytics project"
+    },
+    {
+      "label": "Medallion Architecture (Bronze-Silver-Gold)",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_medallion_architecture",
+      "community": 4,
+      "norm_label": "medallion architecture (bronze-silver-gold)"
+    },
+    {
+      "label": "Native Snowflake Semantic View Layer",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_semantic_view_layer",
+      "community": 5,
+      "norm_label": "native snowflake semantic view layer"
+    },
+    {
+      "label": "FLIBCO_OPERATIONS_SV Semantic View",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_flibco_operations_sv",
+      "community": 0,
+      "norm_label": "flibco_operations_sv semantic view"
+    },
+    {
+      "label": "Cortex Analyst / Snowflake Intelligence Integration",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_cortex_analyst_integration",
+      "community": 0,
+      "norm_label": "cortex analyst / snowflake intelligence integration"
+    },
+    {
+      "label": "Star Schema Design Pattern",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_star_schema_design",
+      "community": 0,
+      "norm_label": "star schema design pattern"
+    },
+    {
+      "label": "dbt_semantic_view Package",
+      "file_type": "document",
+      "source_file": "dbt_packages/dbt_semantic_view/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dbt_semantic_view_readme_package",
+      "community": 2,
+      "norm_label": "dbt_semantic_view package"
+    },
+    {
+      "label": "semantic_view Materialization",
+      "file_type": "rationale",
+      "source_file": "dbt_packages/dbt_semantic_view/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dbt_semantic_view_readme_materialization",
+      "community": 2,
+      "norm_label": "semantic_view materialization"
+    },
+    {
+      "label": "dbt_utils Package",
+      "file_type": "document",
+      "source_file": "dbt_packages/dbt_utils/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dbt_utils_readme_package",
+      "community": 6,
+      "norm_label": "dbt_utils package"
+    },
+    {
+      "label": "dbt_utils date_spine Macro",
+      "file_type": "document",
+      "source_file": "dbt_packages/dbt_utils/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dbt_utils_readme_date_spine",
+      "community": 6,
+      "norm_label": "dbt_utils date_spine macro"
+    },
+    {
+      "label": "ADR-0000: Documenting Architecture Decisions",
+      "file_type": "document",
+      "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md",
+      "source_location": null,
+      "source_url": "https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+      "captured_at": null,
+      "author": "Michael Nygard",
+      "contributor": null,
+      "id": "adr_0000_documenting_architecture_decisions",
+      "community": 8,
+      "norm_label": "adr-0000: documenting architecture decisions"
+    },
+    {
+      "label": "ADR-0001: Format and Structure of Decision Records (MADR)",
+      "file_type": "document",
+      "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0001-decision-record-format.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "adr_0001_decision_record_format",
+      "community": 8,
+      "norm_label": "adr-0001: format and structure of decision records (madr)"
+    },
+    {
+      "label": "ADR-0002: Cross-Database Utils Migration to dbt Core",
+      "file_type": "document",
+      "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0002-cross-database-utils.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2022-03-01",
+      "author": "Joel Labes",
+      "contributor": "Jeremy Cohen",
+      "id": "adr_0002_cross_database_utils",
+      "community": 6,
+      "norm_label": "adr-0002: cross-database utils migration to dbt core"
+    },
+    {
+      "label": "Flibco Project Plan (2026-05-06)",
+      "file_type": "document",
+      "source_file": "plans/plan_2026-05-06_1408.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-05-06T14:08:17.289Z",
+      "author": null,
+      "contributor": null,
+      "id": "plan_2026_05_06_1408_project_plan",
+      "community": 5,
+      "norm_label": "flibco project plan (2026-05-06)"
+    },
+    {
+      "label": "Prefer Native Semantic Views Over Legacy YAML",
+      "file_type": "rationale",
+      "source_file": "plans/plan_2026-05-06_1408.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-05-06T14:08:17.289Z",
+      "author": null,
+      "contributor": null,
+      "id": "plan_2026_05_06_1408_semantic_over_yaml",
+      "community": 5,
+      "norm_label": "prefer native semantic views over legacy yaml"
+    },
+    {
+      "label": "When to Create New Semantic Views (Guidelines)",
+      "file_type": "document",
+      "source_file": "docs/semantic-view-guidelines.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "semantic_view_guidelines_when_to_split",
+      "community": 0,
+      "norm_label": "when to create new semantic views (guidelines)"
+    },
+    {
+      "label": "Default to Single Semantic View Per Domain",
+      "file_type": "rationale",
+      "source_file": "docs/semantic-view-guidelines.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "semantic_view_guidelines_single_view_default",
+      "community": 0,
+      "norm_label": "default to single semantic view per domain"
+    },
+    {
+      "label": "5-10 Tables Per Semantic View Rule",
+      "file_type": "rationale",
+      "source_file": "docs/semantic-view-guidelines.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "semantic_view_guidelines_5_10_tables",
+      "community": 0,
+      "norm_label": "5-10 tables per semantic view rule"
+    },
+    {
+      "label": "Running dbt in Snowflake Guide",
+      "file_type": "document",
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dbt_in_snowflake_guide",
+      "community": 2,
+      "norm_label": "running dbt in snowflake guide"
+    },
+    {
+      "label": "Dynamic Table Materialization",
+      "file_type": "document",
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dbt_in_snowflake_dynamic_table",
+      "community": 2,
+      "norm_label": "dynamic table materialization"
+    },
+    {
+      "label": "Custom generate_schema_name Macro",
+      "file_type": "rationale",
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dbt_in_snowflake_generate_schema_name",
+      "community": 4,
+      "norm_label": "custom generate_schema_name macro"
+    },
+    {
+      "label": "Key Pair Authentication for CI/CD",
+      "file_type": "document",
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dbt_in_snowflake_key_pair_auth",
+      "community": 2,
+      "norm_label": "key pair authentication for ci/cd"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_format_comment_block_for_hash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_format_comment_block_for_sql",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_format_comment_block_for_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_has_header",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_insert_after_shebang_and_encoding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_insert_after_doctype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_prepare_header_for_ext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_apply_header_to_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_should_skip_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "dbt_packages_dbt_semantic_view_scripts_apply_license_headers_py",
+      "target": "scripts_apply_license_headers_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_prepare_header_for_ext",
+      "target": "scripts_apply_license_headers_format_comment_block_for_hash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_prepare_header_for_ext",
+      "target": "scripts_apply_license_headers_format_comment_block_for_sql",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_prepare_header_for_ext",
+      "target": "scripts_apply_license_headers_format_comment_block_for_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_apply_header_to_file",
+      "target": "scripts_apply_license_headers_has_header",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_apply_header_to_file",
+      "target": "scripts_apply_license_headers_insert_after_shebang_and_encoding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_apply_header_to_file",
+      "target": "scripts_apply_license_headers_insert_after_doctype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_apply_header_to_file",
+      "target": "scripts_apply_license_headers_prepare_header_for_ext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_main",
+      "target": "scripts_apply_license_headers_apply_header_to_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "scripts_apply_license_headers_main",
+      "target": "scripts_apply_license_headers_should_skip_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_flibco_agentic_analytics",
+      "target": "readme_medallion_architecture"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_flibco_agentic_analytics",
+      "target": "readme_flibco_operations_sv"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 0.8,
+      "source": "readme_flibco_agentic_analytics",
+      "target": "dbt_utils_readme_package"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_flibco_agentic_analytics",
+      "target": "dbt_semantic_view_readme_package"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "plans/plan_2026-05-06_1408.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "plan_2026_05_06_1408_project_plan",
+      "target": "readme_flibco_agentic_analytics"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "weight": 0.8,
+      "source": "dbt_in_snowflake_generate_schema_name",
+      "target": "readme_medallion_architecture"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "plans/plan_2026-05-06_1408.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "plan_2026_05_06_1408_semantic_over_yaml",
+      "target": "readme_semantic_view_layer"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_flibco_operations_sv",
+      "target": "readme_cortex_analyst_integration"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_flibco_operations_sv",
+      "target": "readme_star_schema_design"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_flibco_operations_sv",
+      "target": "dbt_semantic_view_readme_materialization"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "plans/plan_2026-05-06_1408.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "plan_2026_05_06_1408_semantic_over_yaml",
+      "target": "readme_flibco_operations_sv"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/semantic-view-guidelines.md",
+      "source_location": null,
+      "weight": 0.9,
+      "source": "semantic_view_guidelines_when_to_split",
+      "target": "readme_flibco_operations_sv"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/semantic-view-guidelines.md",
+      "source_location": null,
+      "weight": 0.9,
+      "source": "semantic_view_guidelines_single_view_default",
+      "target": "readme_cortex_analyst_integration"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dbt_packages/dbt_semantic_view/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dbt_semantic_view_readme_package",
+      "target": "dbt_semantic_view_readme_materialization"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "weight": 0.8,
+      "source": "dbt_in_snowflake_guide",
+      "target": "dbt_semantic_view_readme_package"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "weight": 0.5,
+      "source": "dbt_semantic_view_readme_materialization",
+      "target": "dbt_in_snowflake_dynamic_table"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "weight": 0.8,
+      "source": "dbt_in_snowflake_guide",
+      "target": "dbt_utils_readme_package"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0002-cross-database-utils.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "adr_0002_cross_database_utils",
+      "target": "dbt_utils_readme_package"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dbt_packages/dbt_utils/README.md",
+      "source_location": null,
+      "weight": 0.7,
+      "source": "dbt_utils_readme_date_spine",
+      "target": "dbt_utils_readme_package"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0001-decision-record-format.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "adr_0001_decision_record_format",
+      "target": "adr_0000_documenting_architecture_decisions"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "plans/plan_2026-05-06_1408.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "plan_2026_05_06_1408_project_plan",
+      "target": "plan_2026_05_06_1408_semantic_over_yaml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/semantic-view-guidelines.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semantic_view_guidelines_when_to_split",
+      "target": "semantic_view_guidelines_single_view_default"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/semantic-view-guidelines.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semantic_view_guidelines_when_to_split",
+      "target": "semantic_view_guidelines_5_10_tables"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/semantic-view-guidelines.md",
+      "source_location": null,
+      "weight": 0.8,
+      "source": "semantic_view_guidelines_single_view_default",
+      "target": "semantic_view_guidelines_5_10_tables"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "weight": 0.8,
+      "source": "dbt_in_snowflake_guide",
+      "target": "dbt_in_snowflake_generate_schema_name"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "weight": 0.7,
+      "source": "dbt_in_snowflake_guide",
+      "target": "dbt_in_snowflake_dynamic_table"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/dbt-in-snowflake.md",
+      "source_location": null,
+      "weight": 0.7,
+      "source": "dbt_in_snowflake_guide",
+      "target": "dbt_in_snowflake_key_pair_auth"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "semantic_view_architecture_stack",
+      "label": "Semantic View Architecture Stack",
+      "nodes": [
+        "readme_flibco_operations_sv",
+        "dbt_semantic_view_readme_package",
+        "dbt_semantic_view_readme_materialization",
+        "plan_2026_05_06_1408_semantic_over_yaml",
+        "semantic_view_guidelines_when_to_split"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "README.md"
+    },
+    {
+      "id": "medallion_data_pipeline",
+      "label": "Medallion Architecture Data Pipeline",
+      "nodes": [
+        "readme_medallion_architecture",
+        "readme_star_schema_design",
+        "dbt_in_snowflake_generate_schema_name",
+        "dbt_utils_readme_date_spine"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md"
+    },
+    {
+      "id": "dbt_utils_adr_decisions",
+      "label": "dbt_utils Architecture Decision Records",
+      "nodes": [
+        "adr_0000_documenting_architecture_decisions",
+        "adr_0001_decision_record_format",
+        "adr_0002_cross_database_utils"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md"
+    }
+  ],
+  "built_at_commit": "79315fa99191e2db1457afb740abbb6c0dd7ab0a"
+}
