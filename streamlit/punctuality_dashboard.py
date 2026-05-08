@@ -95,8 +95,7 @@ with tab1:
 
     # OTP Gauge
     with col_left:
-        st.subheader("On-Time Performance")
-        st.caption("Fleet-wide OTP gauge. A trip is 'on time' if departure AND arrival are within 5 min of schedule. Red (<70%) = critical, yellow (70-85%) = needs improvement, green (>85%) = target met.")
+        st.subheader("On-Time Performance", help="Percentage of ALL trips that departed and arrived within 5 minutes of schedule — not a single trip, it's the fleet-wide success rate. Red zone (<70%) = critical, yellow (70-85%) = needs improvement, green (>85%) = target met.")
         if not overview_kpis.empty:
             otp_val = overview_kpis.iloc[0]["OTP_RATE"] * 100
             fig = go.Figure(go.Indicator(
