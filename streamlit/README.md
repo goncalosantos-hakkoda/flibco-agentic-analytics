@@ -12,8 +12,8 @@ Two dashboards demonstrating **layout flexibility with KPI consistency** — sam
 ## Setup
 
 ```bash
-# Install dependencies
-pip install -r streamlit/requirements.txt
+# Install dependencies (from project root)
+uv sync --extra streamlit
 
 # Set connection env vars
 export SNOWFLAKE_ACCOUNT=<your-account>
@@ -27,10 +27,10 @@ export SNOWFLAKE_DATABASE=FLIBCO_ANALYTICS
 
 ```bash
 # Executive dashboard (operations + semantic view)
-streamlit run streamlit/operations_dashboard.py
+uv run streamlit run streamlit/operations_dashboard.py
 
 # Analyst dashboard (punctuality + mart tables)
-streamlit run streamlit/punctuality_dashboard.py
+uv run streamlit run streamlit/punctuality_dashboard.py
 ```
 
 ## KPI Consistency Guarantee
