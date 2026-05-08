@@ -156,7 +156,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "flibco agentic analytics project",
       "id": "readme_flibco_agentic_analytics"
     },
@@ -169,7 +169,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "medallion architecture (bronze-silver-gold)",
       "id": "readme_medallion_architecture"
     },
@@ -260,7 +260,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "dbt_utils package",
       "id": "dbt_utils_readme_package"
     },
@@ -273,7 +273,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "dbt_utils date_spine macro",
       "id": "dbt_utils_readme_date_spine"
     },
@@ -312,7 +312,7 @@
       "captured_at": "2022-03-01",
       "author": "Joel Labes",
       "contributor": "Jeremy Cohen",
-      "community": 7,
+      "community": 6,
       "norm_label": "adr-0002: cross-database utils migration to dbt core",
       "id": "adr_0002_cross_database_utils"
     },
@@ -416,7 +416,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "custom generate_schema_name macro",
       "id": "dbt_in_snowflake_generate_schema_name"
     },
@@ -1103,8 +1103,8 @@
       "source_location": "L36",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "streamlit_punctuality_dashboard_run_query",
-      "target": "streamlit_punctuality_dashboard_get_connection"
+      "source": "streamlit_punctuality_dashboard_get_connection",
+      "target": "streamlit_punctuality_dashboard_run_query"
     },
     {
       "relation": "contains",
@@ -1113,8 +1113,8 @@
       "source_location": "L24",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "punctuality_dashboard_py",
-      "target": "streamlit_punctuality_dashboard_get_connection"
+      "source": "streamlit_punctuality_dashboard_get_connection",
+      "target": "punctuality_dashboard_py"
     },
     {
       "relation": "contains",
@@ -1123,8 +1123,8 @@
       "source_location": "L35",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "punctuality_dashboard_py",
-      "target": "streamlit_punctuality_dashboard_run_query"
+      "source": "streamlit_punctuality_dashboard_run_query",
+      "target": "punctuality_dashboard_py"
     },
     {
       "relation": "rationale_for",
@@ -1181,5 +1181,5 @@
       "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md"
     }
   ],
-  "built_at_commit": "1dd32763950ef808ddc69194b1e31ee5eb0cb541"
+  "built_at_commit": "0638558c586b367cedaed04137e8ac9af177465f"
 }
