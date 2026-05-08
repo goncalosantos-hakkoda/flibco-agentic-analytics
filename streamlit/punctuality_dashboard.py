@@ -246,27 +246,30 @@ with tab2:
 
     # Delay trend over time
     st.subheader("Delay Trend (Monthly)")
-    st.caption("Quarterly trend of average delay (minutes) and OTP percentage for the selected route.")
+    st.caption("Monthly trend of average departure delay (minutes) and strict OTP percentage for the selected route.")
     delay_trend = run_query(f"""
         SELECT
-            d.year_quarter,
+            d.year || '-' || LPAD(d.month, 2, '0') AS year_month,
+            d.month_name,
             AVG(p.departure_delay_minutes) AS avg_delay,
             AVG(CASE WHEN p.is_on_time THEN 1.0 ELSE 0.0 END) * 100 AS otp_pct
         FROM FLIBCO_ANALYTICS.MARTS.FCT_PUNCTUALITY p
         JOIN FLIBCO_ANALYTICS.MARTS.DIM_DATE d ON p.date_key = d.date_key
         WHERE p.route_id = '{drill_route_id}'
-        GROUP BY d.year_quarter
-        ORDER BY d.year_quarter
+        GROUP BY d.year, d.month, d.month_name
+        ORDER BY year_month
     """)
-    if not delay_trend.empty:
+    if not delay_trend.empty and len(delay_trend) > 1:
         fig = px.line(
             delay_trend,
-            x="YEAR_QUARTER",
+            x="YEAR_MONTH",
             y=["AVG_DELAY", "OTP_PCT"],
-            labels={"YEAR_QUARTER": "Quarter", "value": "", "variable": "Metric"},
+            labels={"YEAR_MONTH": "Month", "value": "", "variable": "Metric"},
         )
         fig.update_layout(height=300)
         st.plotly_chart(fig, use_container_width=True)
+    elif not delay_trend.empty:
+        st.info("Only one month of data available — trend chart requires at least two data points.")
 
 # ============================================================
 # TAB 3: Revenue at Risk
