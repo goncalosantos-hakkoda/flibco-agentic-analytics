@@ -1181,5 +1181,5 @@
       "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md"
     }
   ],
-  "built_at_commit": "f6d6bb906bfe60017e8e8f8e445b29745bf4d14c"
+  "built_at_commit": "a4345d72d3054969f9cbd29f04f6b8bfa9eecf48"
 }

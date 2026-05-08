@@ -95,7 +95,7 @@ with tab1:
 
     # OTP Gauge
     with col_left:
-        st.subheader("On-Time Performance", help="Percentage of ALL trips that departed and arrived within 5 minutes of schedule — not a single trip, it's the fleet-wide success rate. Red zone (<70%) = critical, yellow (70-85%) = needs improvement, green (>85%) = target met.")
+        st.subheader("On-Time Performance (Departure + Arrival)", help="Percentage of ALL trips where BOTH departure AND arrival were within 5 minutes of schedule. This is the strict OTP metric — a trip must be punctual at both ends to count. Red zone (<70%) = critical, yellow (70-85%) = needs improvement, green (>85%) = target met.")
         if not overview_kpis.empty:
             otp_val = overview_kpis.iloc[0]["OTP_RATE"] * 100
             fig = go.Figure(go.Indicator(
@@ -112,15 +112,15 @@ with tab1:
                     ],
                     "threshold": {"line": {"color": "red", "width": 3}, "thickness": 0.75, "value": 85},
                 },
-                title={"text": "Fleet OTP (target: 85%)"},
+                title={"text": "Strict OTP — departure AND arrival (target: 85%)"},
             ))
             fig.update_layout(height=300)
             st.plotly_chart(fig, use_container_width=True)
 
     # Severity Distribution (Pie)
     with col_right:
-        st.subheader("Delay Severity Distribution")
-        st.caption("Breakdown by delay tier: on_time (<=5min), minor (5-15min), moderate (15-30min), major (30-60min), severe (>60min).")
+        st.subheader("Departure Delay Severity", help="Classifies trips by DEPARTURE delay only (not arrival). 'on_time' here means departure was within 5 min of schedule — the trip may still have arrived late. This is a less strict measure than the OTP gauge which requires both departure AND arrival to be on time.")
+        st.caption("Tiers based on departure delay: on_time (<=5min), minor (5-15min), moderate (15-30min), major (30-60min), severe (>60min).")
         severity_dist = run_query(f"""
             SELECT delay_severity, COUNT(*) AS trip_count
             FROM FLIBCO_ANALYTICS.MARTS.FCT_PUNCTUALITY
