@@ -83,11 +83,11 @@ with tab1:
     col1, col2, col3, col4, col5 = st.columns(5)
     if not overview_kpis.empty:
         row = overview_kpis.iloc[0]
-        col1.metric("Total Trips", f"{int(row['TOTAL_TRIPS']):,}")
-        col2.metric("On-Time Rate", f"{row['OTP_RATE'] * 100:.1f}%")
-        col3.metric("Avg Delay", f"{row['AVG_DELAY']:.1f} min")
-        col4.metric("Total Delay Cost", f"EUR {row['TOTAL_DELAY_COST']:,.0f}")
-        col5.metric("SLA Breach Rate", f"{row['SLA_BREACH_RATE'] * 100:.1f}%")
+        col1.metric("Total Trips", f"{int(row['TOTAL_TRIPS']):,}", help="Number of completed trips with schedule data in the selected routes.")
+        col2.metric("On-Time Rate", f"{row['OTP_RATE'] * 100:.1f}%", help="Percentage of trips where both departure and arrival were within 5 minutes of schedule.")
+        col3.metric("Avg Delay", f"{row['AVG_DELAY']:.1f} min", help="Average departure delay in minutes across all trips. Includes early departures (negative values).")
+        col4.metric("Total Delay Cost", f"EUR {row['TOTAL_DELAY_COST']:,.0f}", help="Estimated financial impact: EUR 0.50 per passenger per minute beyond the 5-min threshold.")
+        col5.metric("SLA Breach Rate", f"{row['SLA_BREACH_RATE'] * 100:.1f}%", help="Percentage of delayed trips that exceeded their delay category's SLA threshold.")
 
     st.divider()
 
@@ -96,6 +96,7 @@ with tab1:
     # OTP Gauge
     with col_left:
         st.subheader("On-Time Performance")
+        st.caption("Fleet-wide OTP gauge. A trip is 'on time' if departure AND arrival are within 5 min of schedule. Red (<70%) = critical, yellow (70-85%) = needs improvement, green (>85%) = target met.")
         if not overview_kpis.empty:
             otp_val = overview_kpis.iloc[0]["OTP_RATE"] * 100
             fig = go.Figure(go.Indicator(
@@ -120,6 +121,7 @@ with tab1:
     # Severity Distribution (Pie)
     with col_right:
         st.subheader("Delay Severity Distribution")
+        st.caption("Breakdown by delay tier: on_time (<=5min), minor (5-15min), moderate (15-30min), major (30-60min), severe (>60min).")
         severity_dist = run_query(f"""
             SELECT delay_severity, COUNT(*) AS trip_count
             FROM FLIBCO_ANALYTICS.MARTS.FCT_PUNCTUALITY
@@ -148,6 +150,7 @@ with tab1:
 
     # Route x Month Heatmap
     st.subheader("OTP Heatmap (Route x Month)")
+    st.caption("Color-coded on-time rate by route and month. Green = high OTP, red = low OTP. Identifies seasonal trouble spots per route.")
     heatmap_data = run_query(f"""
         SELECT
             r.route_name,
@@ -187,6 +190,7 @@ with tab2:
 
     with col_left:
         st.subheader("Delay Category Breakdown")
+        st.caption("Trips affected by each delay type, colored by controllability. Green = Flibco can fix, yellow = partial control, red = external factors.")
         category_breakdown = run_query(f"""
             SELECT
                 dc.delay_category,
@@ -234,15 +238,16 @@ with tab2:
         """)
         if not route_metrics.empty:
             m = route_metrics.iloc[0]
-            st.metric("On-Time Rate", f"{m['OTP_PCT']:.1f}%")
-            st.metric("Avg Departure Delay", f"{m['AVG_DEP_DELAY']:.1f} min")
-            st.metric("SLA Breach Rate", f"{m['SLA_BREACH_PCT']:.1f}%")
-            st.metric("Cascade Rate", f"{m['CASCADE_PCT']:.1f}%")
-            st.metric("Total Delay Cost", f"EUR {m['TOTAL_COST']:,.0f}")
-            st.metric("Avg Risk Score", f"{m['AVG_RISK_SCORE']:.0f}/100")
+            st.metric("On-Time Rate", f"{m['OTP_PCT']:.1f}%", help="% of trips on this route within 5-min threshold.")
+            st.metric("Avg Departure Delay", f"{m['AVG_DEP_DELAY']:.1f} min", help="Mean minutes between scheduled and actual departure.")
+            st.metric("SLA Breach Rate", f"{m['SLA_BREACH_PCT']:.1f}%", help="% of delays exceeding the category-specific SLA threshold.")
+            st.metric("Cascade Rate", f"{m['CASCADE_PCT']:.1f}%", help="% of trips delayed due to a prior trip on the same vehicle running late.")
+            st.metric("Total Delay Cost", f"EUR {m['TOTAL_COST']:,.0f}", help="Sum of estimated delay costs (EUR 0.50/pax/min beyond threshold).")
+            st.metric("Avg Risk Score", f"{m['AVG_RISK_SCORE']:.0f}/100", help="Compound score (0-100) combining delay magnitude, recurrence, cascading, and vehicle reliability.")
 
     # Delay trend over time
     st.subheader("Delay Trend (Monthly)")
+    st.caption("Quarterly trend of average delay (minutes) and OTP percentage for the selected route.")
     delay_trend = run_query(f"""
         SELECT
             d.year_quarter,
@@ -269,6 +274,7 @@ with tab2:
 # ============================================================
 with tab3:
     st.subheader("Revenue at Risk by Route")
+    st.caption("Routes ranked by delay-cost-to-revenue ratio. HIGH = ratio >5%, CRITICAL = >10%. Shows where delays erode profitability.")
 
     risk_data = run_query(f"""
         WITH delay_costs AS (
@@ -319,9 +325,9 @@ with tab3:
         high_risk_count = len(risk_data[risk_data["RISK_LEVEL"].isin(["HIGH", "CRITICAL"])])
 
         col1, col2, col3 = st.columns(3)
-        col1.metric("Total Delay Cost", f"EUR {total_delay_cost:,.0f}")
-        col2.metric("Portfolio Risk Ratio", f"{total_delay_cost / max(total_revenue, 1) * 100:.2f}%")
-        col3.metric("High/Critical Risk Routes", f"{high_risk_count} / {len(risk_data)}")
+        col1.metric("Total Delay Cost", f"EUR {total_delay_cost:,.0f}", help="Sum of all estimated delay costs across selected routes.")
+        col2.metric("Portfolio Risk Ratio", f"{total_delay_cost / max(total_revenue, 1) * 100:.2f}%", help="Total delay cost as a percentage of total revenue. Above 5% signals systemic issues.")
+        col3.metric("High/Critical Risk Routes", f"{high_risk_count} / {len(risk_data)}", help="Number of routes where delay costs exceed 5% of their revenue.")
 
         st.divider()
 
@@ -349,6 +355,7 @@ with tab3:
 
         # Risk ratio bar chart
         st.subheader("Delay-Cost-to-Revenue Ratio by Route")
+        st.caption("Each route's delay cost as % of revenue. Dashed lines mark the 5% (high) and 10% (critical) risk thresholds.")
         fig = px.bar(
             risk_data,
             x="ROUTE_NAME",

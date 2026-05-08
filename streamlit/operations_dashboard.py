@@ -90,10 +90,10 @@ avg_occupancy = kpi_df["AVERAGE_OCCUPANCY_RATE"].iloc[0] if len(kpi_df) > 0 else
 trip_count = kpi_df["TRIP_COUNT"].iloc[0] if len(kpi_df) > 0 else 0
 rev_per_pax = kpi_df["REVENUE_PER_PASSENGER"].iloc[0] if len(kpi_df) > 0 else 0
 
-col1.metric("Total Revenue", f"EUR {total_revenue:,.0f}")
-col2.metric("Avg Occupancy", f"{avg_occupancy * 100:.1f}%")
-col3.metric("Trip Count", f"{trip_count:,}")
-col4.metric("Revenue / Passenger", f"EUR {rev_per_pax:.2f}")
+col1.metric("Total Revenue", f"EUR {total_revenue:,.0f}", help="Sum of all booking fares (EUR) across selected routes and periods.")
+col2.metric("Avg Occupancy", f"{avg_occupancy * 100:.1f}%", help="Average ratio of passengers to vehicle capacity (0-100%). Higher = fuller vehicles.")
+col3.metric("Trip Count", f"{trip_count:,}", help="Total number of completed trips in the selected period.")
+col4.metric("Revenue / Passenger", f"EUR {rev_per_pax:.2f}", help="Total revenue divided by total passengers. Indicates pricing effectiveness.")
 
 st.divider()
 
@@ -102,6 +102,7 @@ col_left, col_right = st.columns(2)
 
 with col_left:
     st.subheader("Revenue by Quarter")
+    st.caption("Total booking revenue (EUR) aggregated by calendar quarter. Shows seasonal demand patterns.")
     revenue_trend = run_query(f"""
         SELECT * FROM SEMANTIC_VIEW(
             FLIBCO_ANALYTICS.SEMANTIC.FLIBCO_OPERATIONS_SV
@@ -124,6 +125,7 @@ with col_left:
 
 with col_right:
     st.subheader("Occupancy by Route")
+    st.caption("Average vehicle fill rate per route. Routes closer to 100% are running near capacity.")
     occupancy_by_route = run_query(f"""
         SELECT * FROM SEMANTIC_VIEW(
             FLIBCO_ANALYTICS.SEMANTIC.FLIBCO_OPERATIONS_SV
@@ -153,6 +155,7 @@ st.divider()
 
 # --- Route Performance Table ---
 st.subheader("Route Performance Summary")
+st.caption("Consolidated view of all routes with key financial and operational metrics. Sortable by any column.")
 
 route_table = run_query(f"""
     SELECT * FROM SEMANTIC_VIEW(

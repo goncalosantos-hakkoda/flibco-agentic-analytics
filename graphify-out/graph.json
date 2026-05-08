@@ -89,7 +89,7 @@
       "file_type": "code",
       "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
       "source_location": "L62",
-      "community": 3,
+      "community": 5,
       "norm_label": "has_header()",
       "id": "scripts_apply_license_headers_has_header"
     },
@@ -98,7 +98,7 @@
       "file_type": "code",
       "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
       "source_location": "L68",
-      "community": 3,
+      "community": 5,
       "norm_label": "insert_after_shebang_and_encoding()",
       "id": "scripts_apply_license_headers_insert_after_shebang_and_encoding"
     },
@@ -107,7 +107,7 @@
       "file_type": "code",
       "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
       "source_location": "L78",
-      "community": 3,
+      "community": 5,
       "norm_label": "insert_after_doctype()",
       "id": "scripts_apply_license_headers_insert_after_doctype"
     },
@@ -125,7 +125,7 @@
       "file_type": "code",
       "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
       "source_location": "L96",
-      "community": 3,
+      "community": 5,
       "norm_label": "apply_header_to_file()",
       "id": "scripts_apply_license_headers_apply_header_to_file"
     },
@@ -156,7 +156,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "flibco agentic analytics project",
       "id": "readme_flibco_agentic_analytics"
     },
@@ -169,7 +169,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "medallion architecture (bronze-silver-gold)",
       "id": "readme_medallion_architecture"
     },
@@ -260,7 +260,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "dbt_utils package",
       "id": "dbt_utils_readme_package"
     },
@@ -273,7 +273,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "dbt_utils date_spine macro",
       "id": "dbt_utils_readme_date_spine"
     },
@@ -312,7 +312,7 @@
       "captured_at": "2022-03-01",
       "author": "Joel Labes",
       "contributor": "Jeremy Cohen",
-      "community": 6,
+      "community": 7,
       "norm_label": "adr-0002: cross-database utils migration to dbt core",
       "id": "adr_0002_cross_database_utils"
     },
@@ -416,7 +416,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "custom generate_schema_name macro",
       "id": "dbt_in_snowflake_generate_schema_name"
     },
@@ -438,72 +438,90 @@
       "file_type": "code",
       "source_file": "streamlit/operations_dashboard.py",
       "source_location": "L1",
-      "id": "streamlit_operations_dashboard_py",
-      "community": 4,
-      "norm_label": "operations_dashboard.py"
+      "community": 3,
+      "norm_label": "operations_dashboard.py",
+      "id": "streamlit_operations_dashboard_py"
     },
     {
       "label": "get_connection()",
       "file_type": "code",
-      "source_file": "streamlit/operations_dashboard.py",
+      "source_file": "operations_dashboard.py",
       "source_location": "L23",
-      "id": "streamlit_operations_dashboard_get_connection",
-      "community": 4,
-      "norm_label": "get_connection()"
+      "community": 3,
+      "norm_label": "get_connection()",
+      "id": "streamlit_operations_dashboard_get_connection"
     },
     {
       "label": "run_query()",
       "file_type": "code",
-      "source_file": "streamlit/operations_dashboard.py",
+      "source_file": "operations_dashboard.py",
       "source_location": "L34",
-      "id": "streamlit_operations_dashboard_run_query",
-      "community": 4,
-      "norm_label": "run_query()"
+      "community": 3,
+      "norm_label": "run_query()",
+      "id": "streamlit_operations_dashboard_run_query"
     },
     {
       "label": "Flibco Operations Executive Dashboard ====================================== Lay",
       "file_type": "rationale",
-      "source_file": "streamlit/operations_dashboard.py",
+      "source_file": "operations_dashboard.py",
       "source_location": "L1",
-      "id": "streamlit_operations_dashboard_rationale_1",
-      "community": 4,
-      "norm_label": "flibco operations executive dashboard ====================================== lay"
+      "community": 3,
+      "norm_label": "flibco operations executive dashboard ====================================== lay",
+      "id": "streamlit_operations_dashboard_rationale_1"
     },
     {
       "label": "punctuality_dashboard.py",
       "file_type": "code",
       "source_file": "streamlit/punctuality_dashboard.py",
       "source_location": "L1",
-      "id": "streamlit_punctuality_dashboard_py",
-      "community": 5,
-      "norm_label": "punctuality_dashboard.py"
+      "community": 4,
+      "norm_label": "punctuality_dashboard.py",
+      "id": "streamlit_punctuality_dashboard_py"
     },
     {
       "label": "get_connection()",
       "file_type": "code",
-      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_file": "punctuality_dashboard.py",
       "source_location": "L24",
-      "id": "streamlit_punctuality_dashboard_get_connection",
-      "community": 5,
-      "norm_label": "get_connection()"
+      "community": 4,
+      "norm_label": "get_connection()",
+      "id": "streamlit_punctuality_dashboard_get_connection"
     },
     {
       "label": "run_query()",
       "file_type": "code",
-      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_file": "punctuality_dashboard.py",
       "source_location": "L35",
-      "id": "streamlit_punctuality_dashboard_run_query",
-      "community": 5,
-      "norm_label": "run_query()"
+      "community": 4,
+      "norm_label": "run_query()",
+      "id": "streamlit_punctuality_dashboard_run_query"
     },
     {
       "label": "Flibco Punctuality Analyst Dashboard ===================================== Layou",
       "file_type": "rationale",
-      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_file": "punctuality_dashboard.py",
       "source_location": "L1",
-      "id": "streamlit_punctuality_dashboard_rationale_1",
-      "community": 5,
-      "norm_label": "flibco punctuality analyst dashboard ===================================== layou"
+      "community": 4,
+      "norm_label": "flibco punctuality analyst dashboard ===================================== layou",
+      "id": "streamlit_punctuality_dashboard_rationale_1"
+    },
+    {
+      "label": "operations_dashboard.py",
+      "file_type": "code",
+      "source_file": "operations_dashboard.py",
+      "source_location": "L1",
+      "id": "operations_dashboard_py",
+      "community": 3,
+      "norm_label": "operations_dashboard.py"
+    },
+    {
+      "label": "punctuality_dashboard.py",
+      "file_type": "code",
+      "source_file": "punctuality_dashboard.py",
+      "source_location": "L1",
+      "id": "punctuality_dashboard_py",
+      "community": 4,
+      "norm_label": "punctuality_dashboard.py"
     }
   ],
   "links": [
@@ -982,9 +1000,9 @@
       "source_file": "streamlit/operations_dashboard.py",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "streamlit_operations_dashboard_py",
-      "target": "streamlit_operations_dashboard_get_connection",
-      "confidence_score": 1.0
+      "target": "streamlit_operations_dashboard_get_connection"
     },
     {
       "relation": "contains",
@@ -992,9 +1010,9 @@
       "source_file": "streamlit/operations_dashboard.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "streamlit_operations_dashboard_py",
-      "target": "streamlit_operations_dashboard_run_query",
-      "confidence_score": 1.0
+      "target": "streamlit_operations_dashboard_run_query"
     },
     {
       "relation": "rationale_for",
@@ -1002,19 +1020,49 @@
       "source_file": "streamlit/operations_dashboard.py",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "streamlit_operations_dashboard_rationale_1",
-      "target": "streamlit_operations_dashboard_py",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "streamlit_operations_dashboard_py",
+      "target": "streamlit_operations_dashboard_rationale_1"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "streamlit/operations_dashboard.py",
+      "source_file": "operations_dashboard.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "streamlit_operations_dashboard_run_query",
+      "target": "streamlit_operations_dashboard_get_connection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "operations_dashboard.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "operations_dashboard_py",
       "target": "streamlit_operations_dashboard_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "operations_dashboard.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "operations_dashboard_py",
+      "target": "streamlit_operations_dashboard_run_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "operations_dashboard.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "streamlit_operations_dashboard_rationale_1",
+      "target": "operations_dashboard_py",
       "confidence_score": 1.0
     },
     {
@@ -1023,9 +1071,9 @@
       "source_file": "streamlit/punctuality_dashboard.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "streamlit_punctuality_dashboard_py",
-      "target": "streamlit_punctuality_dashboard_get_connection",
-      "confidence_score": 1.0
+      "target": "streamlit_punctuality_dashboard_get_connection"
     },
     {
       "relation": "contains",
@@ -1033,9 +1081,9 @@
       "source_file": "streamlit/punctuality_dashboard.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "streamlit_punctuality_dashboard_py",
-      "target": "streamlit_punctuality_dashboard_run_query",
-      "confidence_score": 1.0
+      "target": "streamlit_punctuality_dashboard_run_query"
     },
     {
       "relation": "rationale_for",
@@ -1043,19 +1091,49 @@
       "source_file": "streamlit/punctuality_dashboard.py",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "streamlit_punctuality_dashboard_rationale_1",
-      "target": "streamlit_punctuality_dashboard_py",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "streamlit_punctuality_dashboard_py",
+      "target": "streamlit_punctuality_dashboard_rationale_1"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_file": "punctuality_dashboard.py",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "streamlit_punctuality_dashboard_run_query",
+      "target": "streamlit_punctuality_dashboard_get_connection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "punctuality_dashboard.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "punctuality_dashboard_py",
       "target": "streamlit_punctuality_dashboard_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "punctuality_dashboard.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "punctuality_dashboard_py",
+      "target": "streamlit_punctuality_dashboard_run_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "punctuality_dashboard.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "streamlit_punctuality_dashboard_rationale_1",
+      "target": "punctuality_dashboard_py",
       "confidence_score": 1.0
     }
   ],
@@ -1103,5 +1181,5 @@
       "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md"
     }
   ],
-  "built_at_commit": "34135784276014af95cc67691c0cce80b6938f94"
+  "built_at_commit": "911cdf39918e1cb6ea3cc0aa37a197cc6b517353"
 }
