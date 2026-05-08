@@ -156,7 +156,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "flibco agentic analytics project",
       "id": "readme_flibco_agentic_analytics"
     },
@@ -169,7 +169,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "medallion architecture (bronze-silver-gold)",
       "id": "readme_medallion_architecture"
     },
@@ -182,7 +182,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 5,
       "norm_label": "native snowflake semantic view layer",
       "id": "readme_semantic_view_layer"
     },
@@ -260,7 +260,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 4,
       "norm_label": "dbt_utils package",
       "id": "dbt_utils_readme_package"
     },
@@ -273,7 +273,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 4,
       "norm_label": "dbt_utils date_spine macro",
       "id": "dbt_utils_readme_date_spine"
     },
@@ -312,7 +312,7 @@
       "captured_at": "2022-03-01",
       "author": "Joel Labes",
       "contributor": "Jeremy Cohen",
-      "community": 5,
+      "community": 4,
       "norm_label": "adr-0002: cross-database utils migration to dbt core",
       "id": "adr_0002_cross_database_utils"
     },
@@ -325,7 +325,7 @@
       "captured_at": "2026-05-06T14:08:17.289Z",
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 5,
       "norm_label": "flibco project plan (2026-05-06)",
       "id": "plan_2026_05_06_1408_project_plan"
     },
@@ -338,7 +338,7 @@
       "captured_at": "2026-05-06T14:08:17.289Z",
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 5,
       "norm_label": "prefer native semantic views over legacy yaml",
       "id": "plan_2026_05_06_1408_semantic_over_yaml"
     },
@@ -416,7 +416,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "custom generate_schema_name macro",
       "id": "dbt_in_snowflake_generate_schema_name"
     },
@@ -949,5 +949,5 @@
       "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md"
     }
   ],
-  "built_at_commit": "98c55b382f6ea649420ebfef63c602695b9d7985"
+  "built_at_commit": "2356b213b0be6f9011113c2c861985e7becb0239"
 }
