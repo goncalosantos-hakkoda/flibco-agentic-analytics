@@ -15,7 +15,7 @@ select
     extract(month from date_day) as month,
     extract(day from date_day) as day_of_month,
     extract(dayofweek from date_day) as day_of_week,
-    to_char(date_day, 'YYYY-Q') as year_quarter,
+    extract(year from date_day) || '-Q' || extract(quarter from date_day) as year_quarter,
     extract(quarter from date_day) as quarter,
     to_char(date_day, 'Mon') as month_name,
     to_char(date_day, 'Dy') as day_name,

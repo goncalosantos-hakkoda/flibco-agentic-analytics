@@ -156,7 +156,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "flibco agentic analytics project",
       "id": "readme_flibco_agentic_analytics"
     },
@@ -169,7 +169,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "medallion architecture (bronze-silver-gold)",
       "id": "readme_medallion_architecture"
     },
@@ -260,7 +260,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "dbt_utils package",
       "id": "dbt_utils_readme_package"
     },
@@ -273,7 +273,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "dbt_utils date_spine macro",
       "id": "dbt_utils_readme_date_spine"
     },
@@ -312,7 +312,7 @@
       "captured_at": "2022-03-01",
       "author": "Joel Labes",
       "contributor": "Jeremy Cohen",
-      "community": 6,
+      "community": 7,
       "norm_label": "adr-0002: cross-database utils migration to dbt core",
       "id": "adr_0002_cross_database_utils"
     },
@@ -416,7 +416,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "custom generate_schema_name macro",
       "id": "dbt_in_snowflake_generate_schema_name"
     },
@@ -1181,5 +1181,5 @@
       "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md"
     }
   ],
-  "built_at_commit": "e3b692bb2524ba655ff1e949d0bd2329ae5d1993"
+  "built_at_commit": "19d5ee736dd189c5ceca0ad4fc4245ebb3aaa060"
 }
