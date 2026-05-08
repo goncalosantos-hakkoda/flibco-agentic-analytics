@@ -134,7 +134,7 @@
       "file_type": "code",
       "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
       "source_location": "L127",
-      "community": 7,
+      "community": 8,
       "norm_label": "should_skip_path()",
       "id": "scripts_apply_license_headers_should_skip_path"
     },
@@ -143,7 +143,7 @@
       "file_type": "code",
       "source_file": "dbt_packages/dbt_semantic_view/scripts/apply_license_headers.py",
       "source_location": "L134",
-      "community": 7,
+      "community": 8,
       "norm_label": "main()",
       "id": "scripts_apply_license_headers_main"
     },
@@ -156,7 +156,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "flibco agentic analytics project",
       "id": "readme_flibco_agentic_analytics"
     },
@@ -169,7 +169,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "medallion architecture (bronze-silver-gold)",
       "id": "readme_medallion_architecture"
     },
@@ -182,7 +182,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 0,
       "norm_label": "native snowflake semantic view layer",
       "id": "readme_semantic_view_layer"
     },
@@ -260,7 +260,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "dbt_utils package",
       "id": "dbt_utils_readme_package"
     },
@@ -273,7 +273,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "dbt_utils date_spine macro",
       "id": "dbt_utils_readme_date_spine"
     },
@@ -286,7 +286,7 @@
       "captured_at": null,
       "author": "Michael Nygard",
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "adr-0000: documenting architecture decisions",
       "id": "adr_0000_documenting_architecture_decisions"
     },
@@ -299,7 +299,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "adr-0001: format and structure of decision records (madr)",
       "id": "adr_0001_decision_record_format"
     },
@@ -312,7 +312,7 @@
       "captured_at": "2022-03-01",
       "author": "Joel Labes",
       "contributor": "Jeremy Cohen",
-      "community": 4,
+      "community": 6,
       "norm_label": "adr-0002: cross-database utils migration to dbt core",
       "id": "adr_0002_cross_database_utils"
     },
@@ -325,7 +325,7 @@
       "captured_at": "2026-05-06T14:08:17.289Z",
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 0,
       "norm_label": "flibco project plan (2026-05-06)",
       "id": "plan_2026_05_06_1408_project_plan"
     },
@@ -338,7 +338,7 @@
       "captured_at": "2026-05-06T14:08:17.289Z",
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 0,
       "norm_label": "prefer native semantic views over legacy yaml",
       "id": "plan_2026_05_06_1408_semantic_over_yaml"
     },
@@ -416,7 +416,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "custom generate_schema_name macro",
       "id": "dbt_in_snowflake_generate_schema_name"
     },
@@ -432,6 +432,78 @@
       "community": 2,
       "norm_label": "key pair authentication for ci/cd",
       "id": "dbt_in_snowflake_key_pair_auth"
+    },
+    {
+      "label": "operations_dashboard.py",
+      "file_type": "code",
+      "source_file": "streamlit/operations_dashboard.py",
+      "source_location": "L1",
+      "id": "streamlit_operations_dashboard_py",
+      "community": 4,
+      "norm_label": "operations_dashboard.py"
+    },
+    {
+      "label": "get_connection()",
+      "file_type": "code",
+      "source_file": "streamlit/operations_dashboard.py",
+      "source_location": "L23",
+      "id": "streamlit_operations_dashboard_get_connection",
+      "community": 4,
+      "norm_label": "get_connection()"
+    },
+    {
+      "label": "run_query()",
+      "file_type": "code",
+      "source_file": "streamlit/operations_dashboard.py",
+      "source_location": "L34",
+      "id": "streamlit_operations_dashboard_run_query",
+      "community": 4,
+      "norm_label": "run_query()"
+    },
+    {
+      "label": "Flibco Operations Executive Dashboard ====================================== Lay",
+      "file_type": "rationale",
+      "source_file": "streamlit/operations_dashboard.py",
+      "source_location": "L1",
+      "id": "streamlit_operations_dashboard_rationale_1",
+      "community": 4,
+      "norm_label": "flibco operations executive dashboard ====================================== lay"
+    },
+    {
+      "label": "punctuality_dashboard.py",
+      "file_type": "code",
+      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_location": "L1",
+      "id": "streamlit_punctuality_dashboard_py",
+      "community": 5,
+      "norm_label": "punctuality_dashboard.py"
+    },
+    {
+      "label": "get_connection()",
+      "file_type": "code",
+      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_location": "L24",
+      "id": "streamlit_punctuality_dashboard_get_connection",
+      "community": 5,
+      "norm_label": "get_connection()"
+    },
+    {
+      "label": "run_query()",
+      "file_type": "code",
+      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_location": "L35",
+      "id": "streamlit_punctuality_dashboard_run_query",
+      "community": 5,
+      "norm_label": "run_query()"
+    },
+    {
+      "label": "Flibco Punctuality Analyst Dashboard ===================================== Layou",
+      "file_type": "rationale",
+      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_location": "L1",
+      "id": "streamlit_punctuality_dashboard_rationale_1",
+      "community": 5,
+      "norm_label": "flibco punctuality analyst dashboard ===================================== layou"
     }
   ],
   "links": [
@@ -903,6 +975,88 @@
       "weight": 0.7,
       "source": "dbt_in_snowflake_guide",
       "target": "dbt_in_snowflake_key_pair_auth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "streamlit/operations_dashboard.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "streamlit_operations_dashboard_py",
+      "target": "streamlit_operations_dashboard_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "streamlit/operations_dashboard.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "streamlit_operations_dashboard_py",
+      "target": "streamlit_operations_dashboard_run_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "streamlit/operations_dashboard.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "streamlit_operations_dashboard_rationale_1",
+      "target": "streamlit_operations_dashboard_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "streamlit/operations_dashboard.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "streamlit_operations_dashboard_run_query",
+      "target": "streamlit_operations_dashboard_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "streamlit_punctuality_dashboard_py",
+      "target": "streamlit_punctuality_dashboard_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "streamlit_punctuality_dashboard_py",
+      "target": "streamlit_punctuality_dashboard_run_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "streamlit_punctuality_dashboard_rationale_1",
+      "target": "streamlit_punctuality_dashboard_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "streamlit/punctuality_dashboard.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "streamlit_punctuality_dashboard_run_query",
+      "target": "streamlit_punctuality_dashboard_get_connection",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": [
@@ -949,5 +1103,5 @@
       "source_file": "dbt_packages/dbt_utils/docs/decisions/adr-0000-documenting-architecture-decisions.md"
     }
   ],
-  "built_at_commit": "2356b213b0be6f9011113c2c861985e7becb0239"
+  "built_at_commit": "34135784276014af95cc67691c0cce80b6938f94"
 }

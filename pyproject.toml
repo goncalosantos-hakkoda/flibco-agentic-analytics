@@ -12,3 +12,9 @@ dev = [
     "sqlfluff>=3.0",
     "sqlfluff-templater-dbt>=3.0",
 ]
+streamlit = [
+    "streamlit>=1.30.0",
+    "snowflake-connector-python>=3.6.0",
+    "plotly>=5.18.0",
+    "pandas>=2.1.0",
+]
